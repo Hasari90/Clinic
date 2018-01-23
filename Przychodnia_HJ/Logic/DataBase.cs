@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Przychodnia_HJ
+namespace Przychodnia_HJ.Logic
 {
     public class DataBase
     {

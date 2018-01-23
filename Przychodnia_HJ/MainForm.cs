@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Przychodnia_HJ.Logic;
+using Przychodnia_HJ.PrzychodniaDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,26 @@ namespace Przychodnia_HJ
         private void button1_Click(object sender, EventArgs e)
         {
             new DoctorForm().ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new RaportForm().ShowDialog();
+        }
+
+        private void patientButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void declarationButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void visitsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -85,7 +85,7 @@
             this.patientButton.Name = "patientButton";
             this.patientButton.Size = new System.Drawing.Size(250, 60);
             this.patientButton.TabIndex = 2;
-            this.patientButton.Text = "Pacjenci";
+            this.patientButton.Text = "Edytuj dane pacjenta";
             this.patientButton.UseVisualStyleBackColor = true;
             this.patientButton.Click += new System.EventHandler(this.patientButton_Click);
             // 
@@ -98,7 +98,7 @@
             this.declarationButton.Name = "declarationButton";
             this.declarationButton.Size = new System.Drawing.Size(250, 60);
             this.declarationButton.TabIndex = 3;
-            this.declarationButton.Text = "Deklaracje";
+            this.declarationButton.Text = "Wyszukaj pacjenta";
             this.declarationButton.UseVisualStyleBackColor = true;
             this.declarationButton.Click += new System.EventHandler(this.declarationButton_Click);
             // 

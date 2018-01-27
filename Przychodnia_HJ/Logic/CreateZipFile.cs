@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Przychodnia_HJ.Logic
 {
@@ -51,10 +52,11 @@ namespace Przychodnia_HJ.Logic
                         s.Close();
                     }
                 }
+                MessageBox.Show("Pomyślnie zapisano plik na dysku");  
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Błąd podczas zapisywania pliku na dysku");
             }
         }
     }

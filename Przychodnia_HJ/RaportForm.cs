@@ -18,6 +18,13 @@ namespace Przychodnia_HJ
         public RaportForm()
         {
             InitializeComponent();
+            DeklaracjeTableAdapter deklaracjeTableAdapter = new DeklaracjeTableAdapter();
+            dataGridView1.DataSource = deklaracjeTableAdapter.GetDataByReport(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+            dataGridView1.Columns["ID"].Visible = false;
+            dataGridView1.Columns["IdPacjenta"].Visible = false;
+            dataGridView1.Columns["IdLekarza"].Visible = false;
+            dataGridView1.Columns["Pozytywna"].Visible = false;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,10 +36,19 @@ namespace Przychodnia_HJ
                 if(saveFileDialog.FileName != "")
                 {
                     CreateZipFile czf = new CreateZipFile(Path.GetDirectoryName(saveFileDialog.FileName), saveFileDialog.FileName);
-                    LekarzeTableAdapter lekarze = new LekarzeTableAdapter();
-                    czf.CreateZipFileFromDataTable(lekarze.GetData());
+                    DeklaracjeTableAdapter deklaracjeTableAdapter = new DeklaracjeTableAdapter();
+                    DataTable dataTable = new DataTable("Deklaracja");
+                    dataTable = deklaracjeTableAdapter.GetDataByReport(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+                    czf.CreateZipFileFromDataTable(dataTable);
                 }
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DeklaracjeTableAdapter deklaracjeTableAdapter = new DeklaracjeTableAdapter();
+            dataGridView1.DataSource = deklaracjeTableAdapter.GetDataByReport(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+            dataGridView1.Refresh();
         }
     }
 }

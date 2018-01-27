@@ -31,17 +31,17 @@ namespace Przychodnia_HJ
 
         private void patientButton_Click(object sender, EventArgs e)
         {
-
+            new EditPatientForm().ShowDialog();
         }
 
         private void declarationButton_Click(object sender, EventArgs e)
         {
-
+            new PatientFormcs().ShowDialog();
         }
 
         private void visitsButton_Click(object sender, EventArgs e)
         {
-
+            new VisitsForm().ShowDialog();
         }
     }
 }
